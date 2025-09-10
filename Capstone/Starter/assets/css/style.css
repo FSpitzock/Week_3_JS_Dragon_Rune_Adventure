@@ -31,7 +31,8 @@ button {
   transition: background 0.2s;
 }
 button:hover {
-  background: #ffd84d;
+  background: black;
+  color: white;
 }
 #stats {
   margin-top: 32px;
