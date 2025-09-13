@@ -39,6 +39,11 @@ const showStats = player => {
 
 // Main function that runs the adventure game
 const startAdventure = () => {
+  let userName = prompt("Enter your name:");
+  if (!userName) {
+    alert("Name is required to start your adventure!");
+  }
+  console.log(`Your name is ${userName}.`)
 // Your logic to start the adventure.
 };
 
