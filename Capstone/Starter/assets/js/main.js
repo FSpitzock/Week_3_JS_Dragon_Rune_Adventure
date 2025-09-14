@@ -41,23 +41,42 @@ const showStats = player => {
 // Your logic to start the adventure.
 const startAdventure = () => {
   let userName = prompt("Enter your name:");
-  if (!userName) {
+  if (userName === null) {
+    // User clicked "Cancel"
+    alert("You Cancelled the game.");
+    return;
+  } else if  (!userName) {
     alert("Name is required to start your adventure!");
     return; // Exits game
   }
   console.log(`Your name is ${userName}.`)
 
   let species = prompt("Are you a dragon or human?");
-  if (!species) {
+  let desiredValue1 = "dragon";
+  let desiredValue2 = "human";
+  let lowerCaseInput = species.toLowerCase ();
+
+  if (lowerCaseInput !== desiredValue1 && lowerCaseInput !== desiredValue2) {
+    alert("You are a" + " " + species + ". You are not eligible for XP.");
+    return;
+  } 
+  else if (!species) {
     alert("You must choose either dragon or human.");
-    return; // Extis game
+  } 
+  else if(species === null) {
+    alert("You Cancelled the game.");
+    return; 
   }
   console.log(`You are a ${species}.`)
 
   let rune = prompt("Select Rune. 1 - Rune of Fire. 2 - Rune of Wisdom ");
-  if (!rune) {
+  if (rune === null) {
+    // User clicked "Cancel"
+    alert("You Cancelled the game.");
+    return;
+  } else if  (!rune) {
     alert("You must choose either 1 or 2.");
-    return; // Extis game
+    return; // Exits game
   }
   console.log(`You selected Rune number ${rune}.`)
 };
