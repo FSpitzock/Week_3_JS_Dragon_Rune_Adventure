@@ -38,14 +38,31 @@ const showStats = player => {
 };
 
 // Main function that runs the adventure game
+// Your logic to start the adventure.
 const startAdventure = () => {
   let userName = prompt("Enter your name:");
   if (!userName) {
     alert("Name is required to start your adventure!");
+    return; // Exits game
   }
   console.log(`Your name is ${userName}.`)
-// Your logic to start the adventure.
+
+  let species = prompt("Are you a dragon or human?");
+  if (!species) {
+    alert("You must choose either dragon or human.");
+    return; // Extis game
+  }
+  console.log(`You are a ${species}.`)
+
+  let rune = prompt("Select Rune. 1 - Rune of Fire. 2 - Rune of Wisdom ");
+  if (!rune) {
+    alert("You must choose either 1 or 2.");
+    return; // Extis game
+  }
+  console.log(`You selected Rune number ${rune}.`)
 };
+
+
 
 // Add event listener to the start button to begin the adventure when clicked
 document.getElementById('startBtn').addEventListener('click', startAdventure);
