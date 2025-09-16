@@ -2,8 +2,12 @@
 
 // Constructor for Player
 class Player {
-  constructor(name, species) {
+  constructor(name, species, element, rune) {
     // Set up player properties
+    this.name = name;
+    this.species = species;
+    this.element = element;
+    this.rune = rune;
   }
   // Method to add a rune to the player's collection
   addRune(rune) {
@@ -119,7 +123,8 @@ const startAdventure = () => {
     return; // Exits game
   }
 
-  console.log(`You selected Rune number ${rune}.`)
+  console.log(`You selected Rune number ${rune}.`);
+  console.log( Player); 
 };
 
 
