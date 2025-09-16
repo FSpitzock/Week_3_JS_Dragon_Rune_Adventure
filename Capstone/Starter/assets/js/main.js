@@ -57,7 +57,7 @@ const startAdventure = () => {
   let species = prompt("Are you a dragon or human?");
   let desiredValue1 = "dragon";
   let desiredValue2 = "human";
-  let lowerCaseInput = species.toLowerCase().trim();
+  let lowerCaseInput = species.trim().toLowerCase();
  
   if (lowerCaseInput !== desiredValue1 && lowerCaseInput !== desiredValue2) {
     alert("You are a" + " " + species + ". You are not eligible for XP.");
@@ -78,7 +78,7 @@ const startAdventure = () => {
   let desiredElement2 = "ice";
   let desiredElement3 = "earth";
   let desiredElement4 = "wind";
-  let lowerCaseElement = element.toLowerCase().trim();
+  let lowerCaseElement = element.trim().toLowerCase();
 
    
   if (lowerCaseElement !== desiredElement1 && 
