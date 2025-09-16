@@ -40,7 +40,14 @@ const showStats = player => {
 // Main function that runs the adventure game
 // Your logic to start the adventure.
 const startAdventure = () => {
- // First window prompy box: User Name
+  const userConfirmed = window.confirm("Start Adventure?");
+  if (userConfirmed) {
+    console.log("User clicked OK. Proceed with adventure.")
+  } else {
+    alert("You Cancelled the game.");
+    return; // User clicked cancel to exit game
+  } 
+ // First window prompt box: User Name
   let userName = prompt("Enter your name:");
   if (userName === null) {
     // User clicked "Cancel"
