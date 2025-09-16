@@ -44,7 +44,7 @@ const startAdventure = () => {
   if (userName === null) {
     // User clicked "Cancel"
     alert("You Cancelled the game.");
-    return;
+    return; // Exits game
   } else if  (!userName) {
     alert("Name is required to start your adventure!");
     return; // Exits game
@@ -54,30 +54,45 @@ const startAdventure = () => {
   let species = prompt("Are you a dragon or human?");
   let desiredValue1 = "dragon";
   let desiredValue2 = "human";
-  let lowerCaseInput = species.toLowerCase ();
-
+  let lowerCaseInput = species.toLowerCase().trim();
+ 
   if (lowerCaseInput !== desiredValue1 && lowerCaseInput !== desiredValue2) {
     alert("You are a" + " " + species + ". You are not eligible for XP.");
-    return;
+    return; // Exits game
   } 
   else if (!species) {
     alert("You must choose either dragon or human.");
   } 
   else if(species === null) {
     alert("You Cancelled the game.");
-    return; 
+    return; // Exits game
   }
   console.log(`You are a ${species}.`)
 
-  let rune = prompt("Select Rune. 1 - Rune of Fire. 2 - Rune of Wisdom ");
-  if (rune === null) {
-    // User clicked "Cancel"
-    alert("You Cancelled the game.");
-    return;
+  let element = prompt("What is your element? (e.g., Fire, Ice, Earth, Wind)");
+  if (!element) {
+    alert("An Element is required to continue your journey!");
+    return; // Exits game
+  }
+   console.log(`Your element is: ${element}.`)
+
+  let rune = prompt("Select Rune. \n1 - Rune of Wisdom (Knowledge). \n2 - Rune of Fire (Flame) \n(only type in the number 1 or number 2)");
+  //rune = Number();
+  let desiredRune1 = "1";
+  let desiredRune2 = "2";
+    
+  if (rune !== desiredRune1 && rune !== desiredRune2) {
+    alert ("You must choose the correct rune!");
+    return; // Exits game
   } else if  (!rune) {
     alert("You must choose either 1 or 2.");
     return; // Exits game
+  } else if (rune === null) {
+    // User clicked "Cancel"
+    alert("You Cancelled the game.");
+    return; // Exits game
   }
+
   console.log(`You selected Rune number ${rune}.`)
 };
 
