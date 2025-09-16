@@ -40,6 +40,7 @@ const showStats = player => {
 // Main function that runs the adventure game
 // Your logic to start the adventure.
 const startAdventure = () => {
+ // First window prompy box: User Name
   let userName = prompt("Enter your name:");
   if (userName === null) {
     // User clicked "Cancel"
@@ -51,6 +52,8 @@ const startAdventure = () => {
   }
   console.log(`Your name is ${userName}.`)
 
+
+// Second window prompt box: Species
   let species = prompt("Are you a dragon or human?");
   let desiredValue1 = "dragon";
   let desiredValue2 = "human";
@@ -69,13 +72,29 @@ const startAdventure = () => {
   }
   console.log(`You are a ${species}.`)
 
-  let element = prompt("What is your element? (e.g., Fire, Ice, Earth, Wind)");
-  if (!element) {
+  // Third window prompy box: Element
+  let element = prompt("What is your element? \n(e.g., Fire, Ice, Earth, Wind)");
+  let desiredElement1 = "fire";
+  let desiredElement2 = "ice";
+  let desiredElement3 = "earth";
+  let desiredElement4 = "wind";
+  let lowerCaseElement = element.toLowerCase().trim();
+
+   
+  if (lowerCaseElement !== desiredElement1 && 
+      lowerCaseElement !== desiredElement2 && 
+      lowerCaseElement !== desiredElement3 && 
+      lowerCaseElement !== desiredElement4) {
+      alert("You must choose a true element! Start over!");
+      return; // Exists game  
+      }  
+      else if (!element) {
     alert("An Element is required to continue your journey!");
     return; // Exits game
   }
    console.log(`Your element is: ${element}.`)
 
+// Fourth window prompy box: Rune selector
   let rune = prompt("Select Rune. \n1 - Rune of Wisdom (Knowledge). \n2 - Rune of Fire (Flame) \n(only type in the number 1 or number 2)");
   //rune = Number();
   let desiredRune1 = "1";
